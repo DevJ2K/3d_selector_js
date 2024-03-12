@@ -1,0 +1,203 @@
+
+:root {
+	--accent-color: rgb(0, 225, 255);
+	--purple1: rgb(156, 16, 190);
+	--white: #fff;
+	--red: #ff0000;
+	--black:#080808;
+  }
+
+.container {
+	flex: 1;
+	padding: 20px;
+  }
+
+
+.child-menu {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#pong-main-menu .mode-title {
+	text-align: center;
+	box-shadow: 0 4px 18px rgba(219, 74, 255, 0.164);
+	background-color: rgba(107, 0, 150, 0.116);
+	border: 0.5px dashed var(--purple1);
+	border-radius: 16px;
+	padding: 16px;
+}
+
+#selected-mode-carousel {
+	display: flex;
+	height: 550px;
+	width: 550px;
+	color: var(--white);
+
+	background: linear-gradient(135deg, rgba(54, 0, 116, 0.158) 0%, rgba(29, 0, 46, 0.527) 100%);
+	border-radius: 16px;
+	box-shadow: inset 0px 0px 16px 12px #190036c9;
+	backdrop-filter: blur(6.7px);
+	-webkit-backdrop-filter: blur(6.7px);
+	border: 1px solid rgba(255, 255, 255, 0.288);
+
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+#selected-mode-carousel .carousel{
+	position: absolute;
+	width: 65%;
+	height: 65%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	perspective: 1000px;
+  }
+
+ #selected-mode-carousel .carousel-content{
+	transform-style: preserve-3d;
+	animation: rotate360 0s infinite forwards linear;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+  }
+
+ #selected-mode-carousel .selected-background{
+	position: absolute;
+	width: 350px;
+	height: 350px;
+	border-radius: 30px;
+	background-size: cover;
+	background-position: 50%;
+	border: 4px solid rgb(46, 46, 46);
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.795);
+	display: flex;
+	transition: .3s;
+}
+
+#selected-mode-carousel .selected-background:hover {
+	cursor: pointer;
+	border: 4px solid rgb(0, 225, 255);
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.438);
+  }
+
+  #selected-mode-carousel .selected-background div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
+	overflow: hidden;
+    white-space: nowrap;
+  }
+ #selected-mode-carousel span,  #selected-mode-carousel i{
+	margin: 8px;
+	font-size: 36px;
+  }
+
+  @keyframes rotate360{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(-360deg);
+	}
+  }
+
+  .div-selected-mode-buttons {
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+  }
+
+  .my-btn-back {
+	position: absolute;
+	cursor: pointer;
+	width: 36px;
+	height: 36px;
+	margin: 16px;
+	background-color: transparent; /* Green */
+	border: 2px dashed rgba(138, 0, 11, 0.435);
+	color: rgba(255, 255, 255, 0.452);
+	padding: 15px 32px;
+
+	font-size: 18px;
+
+	border-radius: 8px;
+	box-shadow: 2px 2px 12px rgba(139, 1, 1, 0.233);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	transition: .2s;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+  }
+
+  .my-btn-back:hover {
+	border-style: solid;
+	border-color: rgba(255, 17, 17, 0.863);
+	color: white;
+	/* background: linear-gradient(135deg, rgb(145, 0, 161) 0%, rgb(46, 0, 194) 100%); */
+	box-shadow: 0 4px 12px rgb(0, 0, 0);
+  }
+
+  .my-btn-back:active {
+	box-shadow: inset 1px 1px 26px rgba(190, 16, 16, 0.425);
+	border-color: rgba(255, 17, 17);
+	border-style: inset;
+  }
+
+  .my-btn-outlined {
+	cursor: pointer;
+	width: 128px;
+	margin: 16px;
+	background-color: transparent; /* Green */
+	border: 3px solid rgba(149, 0, 255, 0.435);
+	color: white;
+	padding: 15px 32px;
+	font-size: 28px;
+
+	border-radius: 16px;
+	box-shadow: 0 4px 18px rgba(219, 74, 255, 0.295);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	transition: .2s;
+	/* display: flex; */
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	/* background-color: blue; */
+  }
+
+  .my-btn-outlined:hover {
+	border-color: rgb(149, 0, 255);
+	background: linear-gradient(135deg, rgb(145, 0, 161) 0%, rgb(46, 0, 194) 100%);
+	box-shadow: 0 4px 12px rgb(0, 0, 0);
+  }
+
+  .my-btn-outlined:active {
+	box-shadow: inset 4px 4px 26px rgb(156, 16, 190);
+	border-color: rgb(149, 0, 255);
+	border-style: inset;
+  }
+
+ #selected-mode-carousel .selected-background:nth-child(1){
+	background-image: url("images/map_screen.png");
+	transform: rotateY(0deg) translateZ(120px);
+
+}
+#selected-mode-carousel .selected-background:nth-child(2){
+	background-image: url("images/map_screen.png");
+	transform: rotateY(120deg) translateZ(120px);
+}
+#selected-mode-carousel .selected-background:nth-child(3){
+	background-image: url("images/map_screen.png");
+	transform: rotateY(240deg) translateZ(120px);
+  }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="box.css">
+	<title>Document</title>
+</head>
+<body>
+	<div id="content" class="container">
+
+	<div class="main-container">
+
+	<div id="new_content">
+		<!-- <title>Game Lobby</title> -->
+		<button onclick="console.log('back')" class="my-btn-back"><i class="fa-solid fa-arrow-left"></i></button>
+		<div id="main" class="child-menu">
+
+			<div id="pong-main-menu" class="child-menu">
+				<div>
+					<h1 class="mode-title">Séléctionnez un mode</h1>
+					<div id="selected-mode-carousel">
+						<div class="carousel">
+						  <div class="carousel-content">
+							<div class="selected-background rotateY-0" onclick="console.log('1_player');">
+								<div>
+									<i class="fa-solid fa-user"></i><span>1 Joueur</span>
+								</div>
+							</div>
+
+							<div class="selected-background rotateY-120" onclick="console.log('2_players');">
+								<div>
+									<i class="fa-solid fa-user"></i><span>2 Joueurs</span>
+								</div>
+							</div>
+
+							<div class="selected-background rotateY-240" onclick="console.log('online');">
+								<div>
+									<i class="fa-solid fa-user"></i><span>En ligne</span>
+								</div>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  <div class="div-selected-mode-buttons">
+						  <button onclick="changeModeRotate('previous')" class="my-btn-outlined"><i class="fa-solid fa-arrow-left"></i></button>
+						  <button onclick="changeModeRotate('next')" class="my-btn-outlined"><i class="fa-solid fa-arrow-right"></i></button>
+					  </div>
+				</div>
+			</div>
+
+			<div id="pong-online-menu" class="child-menu" style="display: none;">
+
+				<div id="log-player-info">
+					<h1 id="log-as-id">Log in as player </h1>
+				</div>
+
+				<div id="game-div">
+					<div id="score-pong">
+						<h1 id="player-left">0</h1>
+						<h1>-</h1>
+						<h1 id="player-right">0</h1>
+					</div>
+					<div>
+						<canvas id="pong_canvas" width="300" height="400"></canvas>
+						<!-- <div id="waiting-user-loader"></div> -->
+					</div>
+				</div>
+
+				<div id="socket-waiting">
+					<div>
+						<h1>Waiting for other user ... (1/2)</h1>
+						<div class="loader-socket"></div>
+					</div>
+				</div>
+
+
+				<div id="div-timer-running">
+					<h1>Game starts in :</h1>
+					<h1 id="timer-running">5</h1>
+				</div>
+
+				<div id="game-buttons" class="buttons">
+					<button type="button" onclick="backToDefaultPage()" id="back-btn-1" class="btn btn-outline-info btn-lg">RETOUR</button>
+					<button type="button" onclick="clickOpenSocket()" id="join-btn" class="btn btn-outline-success btn-lg">JOIN LOBBY</button>
+					<button type="button" onclick="clickCloseSocket()" id="left-btn" class="btn btn-outline-danger btn-lg">LEFT LOBBY</button>
+
+					<!-- <button type="button" class="btn btn-danger btn-lg">Leave</button> -->
+				</div>
+			</div>
+
+			</div>
+
+		<!-- THREE.js import -->
+		<!--|-->
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="selected_mode.js"></script>
+</body>
+</html>
+
+
+
+
+
